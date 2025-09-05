@@ -1,4 +1,5 @@
 -- preprimeagen basic stuff
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
@@ -6,6 +7,12 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set expandtab")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
+
+vim.cmd([[
+let &stc = '%#NonText#%{&nu?v:lnum:""}' .
+      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
+      \ '%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
+]])
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -15,7 +22,6 @@ vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
 --vim.opt.colorcolumn = "80"
 vim.opt.mouse = ""
---vim.cmd("colorscheme slate")
 
 vim.g.mapleader= " "
 vim.g.maplocalleader = "\\"
