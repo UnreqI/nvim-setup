@@ -1,6 +1,6 @@
 -- lua/config/colors.lua
 
-local themes = { "catppuccin", "gruvbox", "tokyonight", "onedark" }
+local themes = { "catppuccin", "gruvbox", "tokyonight", "onedark", "monokai"}
 local current = 1
 
 function SetTheme(name)
