@@ -8,11 +8,11 @@ vim.cmd("set expandtab")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
 
-vim.cmd([[
-let &stc = '%#NonText#%{&nu?v:lnum:""}' .
-      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
-      \ '%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
-]])
+--vim.cmd([[
+--let &stc = '%#NonText#%{&nu?v:lnum:""}' .
+--      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
+--      \ '%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
+--]])
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -28,8 +28,8 @@ vim.g.maplocalleader = "\\"
 
 -- Map Ctrl-Backspace to delete the previous word in insert mode.
 -- solution: https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
-vim.cmd("noremap! <C-BS> <C-w>")
-vim.cmd("noremap! <C-h> <C-w>")
+vim.keymap.set({ "i", "c" }, "<C-BS>", "<C-w>", { noremap = true })
+vim.keymap.set({ "i", "c" }, "<C-h>", "<C-w>", { noremap = true })
 
 -- Marco Peluso (lsp and maybe some other stuff)
 --vim.opt.winborder = "rounded"
