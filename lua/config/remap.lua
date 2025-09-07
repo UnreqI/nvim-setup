@@ -8,11 +8,12 @@ vim.cmd("set expandtab")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
 
-vim.cmd([[
-let &stc = '%#NonText#%{&nu?v:lnum:""}' .
-      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
-      \ '%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
-]])
+-- Status bar with relative line numbers and line numbers (and more) from :help statusbar
+--vim.cmd([[
+--let &stc = '%#NonText#%{&nu?v:lnum:""}' .
+--      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
+--      \ '%#LineNr#%{&rnu&&!(v:lnum%2)?"\ ".v:relnum:""}'
+--]])
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -28,8 +29,8 @@ vim.g.maplocalleader = "\\"
 
 -- Map Ctrl-Backspace to delete the previous word in insert mode.
 -- solution: https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
-vim.cmd("noremap! <C-BS> <C-w>")
-vim.cmd("noremap! <C-h> <C-w>")
+vim.keymap.set({ "i", "c" }, "<C-BS>", "<C-w>", { noremap = true })
+vim.keymap.set({ "i", "c" }, "<C-h>", "<C-w>", { noremap = true })
 
 -- Marco Peluso (lsp and maybe some other stuff)
 --vim.opt.winborder = "rounded"
@@ -65,4 +66,23 @@ vim.keymap.set("v", "<leader>d", "\"+d")
 
 
 -- i stoped doing the rest of Primeagen's remaps because I haven't encountered the problems yet or used it enough to want them but consider checking them out later.
+
+
+
+
+-- Plugin Remaps:
+-- ThemeHub
+vim.keymap.set("n", "<leader>th", "<cmd>ThemeHub<cr>", { desc = "Open ThemeHub" })
+
+-- Transparent.nvim
+vim.keymap.set("n", "<leader>tt", "<cmd>TransparentToggle<cr>", { desc = "Toggle theme transparency" })
+
+
+
+
+
+
+
+
+
 
