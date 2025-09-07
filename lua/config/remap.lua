@@ -8,6 +8,7 @@ vim.cmd("set expandtab")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
 
+-- Status bar with relative line numbers and line numbers (and more) from :help statusbar
 --vim.cmd([[
 --let &stc = '%#NonText#%{&nu?v:lnum:""}' .
 --      \ '%=%{&rnu&&(v:lnum%2)?"\ ".v:relnum:""}' .
@@ -65,4 +66,23 @@ vim.keymap.set("v", "<leader>d", "\"+d")
 
 
 -- i stoped doing the rest of Primeagen's remaps because I haven't encountered the problems yet or used it enough to want them but consider checking them out later.
+
+
+
+
+-- Plugin Remaps:
+-- ThemeHub
+vim.keymap.set("n", "<leader>th", "<cmd>ThemeHub<cr>", { desc = "Open ThemeHub" })
+
+-- Transparent.nvim
+vim.keymap.set("n", "<leader>tt", "<cmd>TransparentToggle<cr>", { desc = "Toggle theme transparency" })
+
+
+
+
+
+
+
+
+
 
