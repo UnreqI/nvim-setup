@@ -5,5 +5,5 @@ return { -- All plugins that we want
     },
     {"nvim-treesitter/nvim-treesitter", build= ":TSUpdate"},
     { "nvim-lua/plenary.nvim" },
-    { "theprimeagen/harpoon" },
+    { "theprimeagen/harpoon" }, 
 }   
