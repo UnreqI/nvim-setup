@@ -1,9 +1,9 @@
 -- lua/plugins/treesitter.lua
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate", -- runs after install/update
-  config = function()
-    require("nvim-treesitter.configs").setup({
+  opts = {
       ensure_installed = {
         "lua", "javascript", "haskell", "python",
         "cpp", "asm", "typescript", "rust"
@@ -23,7 +23,7 @@ return {
       auto_install = true,
       sync_install = false,
       additional_vim_regex_highlighting = false,
-    })
-  end,
+    }
+  
 }
 
